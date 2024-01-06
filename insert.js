@@ -6,7 +6,11 @@ const sizeList = document.getElementById("sizeList");
 const categories = [...new Set(products.map((product) => product.category))];
 const colors = [...new Set(products.map((product) => product.color))];
 const sizes = [...new Set(products.map((product) => product.sizes).flat())];
-const productsElement = document.getElementById("products");
+
+
+console.log(categories);
+console.log(colors);
+console.log(sizes);
 
 
 categories.forEach((category) => {
@@ -34,42 +38,8 @@ data-size="${size}"
 >
 <button class="uppercase w-full h-full">${size}</button>
 </li>`
-})
-products.forEach((product) => {
-  const pName = product.name.split(" ").map((name) => name[0].toUpperCase() + name.slice(1)).join(" ");
-
-  productsElement.innerHTML +=
-   ` <div class="col-span-4 cursor-pointer productItem">
-    <a href="./productPage/product.html">
-      <div class="mb-4 border border-neutral-200 rounded-lg">
-        <img
-          src="${product.image}"
-          alt=""
-          class="w-full h-[500px]"
-        />
-      </div>
-      <div class="flex justify-between font-bold">
-        <div>
-          <h1 class="text-xl">${pName}</h1>
-          <p class="text-neutral-500">${product.category}</p>
-        </div>
-        <h1 class="text-2xl">
-          <span>${product.price}</span>
-          AZN
-        </h1>
-      </div>
-    </a>
-    </div> `
-
-  const productItems = document.querySelectorAll(".productItem");
-  productItems.forEach((productItem, index) => {
-    productItem.addEventListener("click", (event) => {
-      event.preventDefault();
-      const selectedProduct = products[index];
-      localStorage.setItem("product", JSON.stringify(selectedProduct));
-
-    });
-  });
 });
+
+
 
 

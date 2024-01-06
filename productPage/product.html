@@ -59,7 +59,7 @@
           </ul>
         </nav>
         <div class="flex gap-5">
-          <a href="/cart">
+          <a href="../cartPage/cart.html">
             <button
               class="bg-[#1d1d1d] border-2 transition-all duration-200 hover:border-yellow-400 h-12 w-12 flex items-center justify-center rounded-full"
             >
@@ -118,40 +118,54 @@
             <!-- Size -->
             <div class="mb-28">
               <h3 class="text-xs font-bold mb-3">Choose your size</h3>
-              <ul class="flex flex-wrap gap-2">
+              <ul id="sizeList" class="flex flex-wrap gap-2">
                 <li
-                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg"
+                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center overflow-hidden  rounded-lg"
+                  data-size="xs"
+                >
+                  <button class="uppercase w-full h-full">xs</button>
+                </li>
+                <li
+                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center overflow-hidden rounded-lg"
                   data-size="s"
                 >
                   <button class="uppercase w-full h-full">s</button>
                 </li>
                 <li
-                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg"
-                  data-size="s"
+                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center overflow-hidden justify-center rounded-lg"
+                  data-size="m"
                 >
-                  <button class="uppercase w-full h-full">s</button>
+                  <button class="uppercase w-full h-full">m</button>
                 </li>
                 <li
-                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg"
-                  data-size="s"
-                >
-                  <button class="uppercase w-full h-full">s</button>
-                </li>
+                class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center overflow-hidden justify-center rounded-lg"
+                data-size="l"
+              >
+                <button class="uppercase w-full h-full">l</button>
+              </li>
+              <li
+              class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center overflow-hidden justify-center rounded-lg"
+              data-size="xl"
+            >
+              <button class="uppercase w-full h-full">xl</button>
+            </li>
               </ul>
             </div>
             <!-- Counter -->
             <div class="flex items-center gap-6 font-black mb-8">
-              <button class="text-3xl">-</button>
+              <button id="decrease" class="text-3xl">-</button>
               <input
+              id="counter"
                 type="number"
                 min="1"
                 max="100"
                 class="border h-14 text-2xl text-center rounded-md"
               />
-              <button class="text-3xl">+</button>
+              <button id="increase" class="text-3xl">+</button>
             </div>
             <!-- Add to Cart -->
             <button
+            id="addToCard"
               class="w-full flex rounded-lg font-black uppercase duration-200 justify-between items-center bg-[#1d1d1d] hover:bg-[#0075ff] text-white text-xl px-8 py-6"
             >
               Add To Cart
